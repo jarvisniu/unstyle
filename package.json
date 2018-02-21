@@ -1,0 +1,23 @@
+{
+  "name": "unstyle",
+  "description": "Write less styles",
+  "version": "0.1.0",
+  "main": "unstyle.css",
+  "scripts": {
+    "build": "stylus unstyle.styl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarvisniu/unstyle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarvisniu/unstyle/issues"
+  },
+  "homepage": "https://github.com/jarvisniu/unstyle#readme",
+  "devDependencies": {
+    "stylus": "^0.54.5"
+  }
+}

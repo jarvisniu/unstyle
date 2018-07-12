@@ -27,6 +27,7 @@
 【杂项】
 颜色: 文字 color-<color>, 背景 bg-<color>, 边框 b-<color>, 灰阶 <x>-gray-[1-e]
 禁止: 换行 no-wrap (white-space: nowrap), 粗体 no-bold (font-weight: normal), 选择 no-select (user-select: none), 拖拽 no-drap (user-drag: none)
+其他：光标 c-<style>
 
 ## 需增补
 

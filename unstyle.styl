@@ -28,6 +28,7 @@ $BORDER_COLOR = #e6e6e6
 // b-t      border-top
 // b-v      border-vertical
 // bg-      background-color
+// c-       cursor
 // d-       display
 // f-s-     font-size
 // l-h-     line-height
@@ -373,4 +374,11 @@ for $i in 1 2 3 4 5 6 7 8 9
 
 // 禁止换行
 .no-wrap
-    white-space nowrap
+  white-space nowrap
+
+// 其他 Others ---------------------------------------------------------------
+
+// 光标
+for $i in default none pointer crosshair text move
+  .c-{$i}
+    cursor $i

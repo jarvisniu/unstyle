@@ -1,23 +1,23 @@
 /* unstyle - Write less styles */
 
+// bootstrap4: e6, element-ui: f0
 $BORDER_COLOR = #e6e6e6
-
-// sizes
-// 1: 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 1.8 2 2.5 3 4 5
-// 2: 0 1 2 3 4 5 6 8 10 12 15 20 25 30 40 50 60 80 100
-// 3: 100 120 150 200 250 300 400 500 600 800 1000
 
 // 目录 Contents ----------------------------------------------------------------
 
+// 参考
 // 布局
 // 盒模型
 // 边框
-// 弹性框
 // 字体
 // 颜色
+// 禁止
+// 其他
 
-// 缩写词表 Acronym --------------------------------------------------------------
+// 参考 Refs --------------------------------------------------------------------
 
+// n1       0 1 2 3 4 5 6 8 10 12 15 20 25 30 40 50 60 70 80 90 100
+// n2       100 120 150 200 250 300 400 500 600 800 1000
 // b-       border-<style|color|width>
 // b-a      border-all
 // b-b      border-bottom
@@ -30,11 +30,9 @@ $BORDER_COLOR = #e6e6e6
 // bg-      background-color
 // c-       cursor
 // d-       display
-// f-s-     font-size
 // l-h-     line-height
 // h-       height
 // h-m-     height minus
-// m-a      margin: 0 auto
 // m-a-     margin-all
 // m-b-     margin-bottom
 // m-h-     margin-horizontal
@@ -43,6 +41,7 @@ $BORDER_COLOR = #e6e6e6
 // m-t-     margin-top
 // m-v-     margin-vertical
 // o-       overflow, opacity
+// p-       position
 // p-a-     padding-all
 // p-b-     padding-bottom
 // p-h-     padding-horizontal
@@ -56,43 +55,36 @@ $BORDER_COLOR = #e6e6e6
 
 // 布局 Layout ------------------------------------------------------------------
 
-// display
+// position
+for $i in static relative absolute fixed sticky
+    .p-{$i}
+        position $i !important
+
+// display - same with Bootstrap & Primer
 for $i in inherit none inline inline-block block table table-cell flex inline-flex
     .d-{$i}
-        display $i
+        display $i !important
 
-// visibility
-.visible
-    visibility visible
-.invisible
-    visibility hidden
-
-// position
-for $i in absolute relative fixed sticky
-    .{$i}
-        position $i
-
-// float
-.float-left
-    float left
-.float-right
-    float right
+// float - same with Bootstrap
+for $i in left right none
+  .float-{$i}
+      float $i !important
 .clearfix
     overflow auto
 
-// full-size, fill-parent
+// full size
+.full-height
+.h-full
+    height 100% !important
+.full-width
+.w-full
+    width 100% !important
 .full-size
-.fill-parent
     width 100%
     height 100%
 
-// margin: auto
-.m-a
-    margin-left auto
-    margin-right auto
-
 // overflow
-for $type in scroll hidden auto
+for $type in visible scroll hidden auto
     .o-{$type}
         overflow $type
     .o-x-{$type}
@@ -103,7 +95,7 @@ for $type in scroll hidden auto
 // 盒模型 Box -------------------------------------------------------------------
 
 // [min-, max-] width, height, height minus(h-m-): 10 ~ 1000
-for $i in 10 12 15 20 25 30 40 50 60 70 80 100 120 150 200 250 300 400 500 600 800 1000
+for $i in 10 12 15 20 25 30 40 50 60 70 80 90 100 120 150 200 250 300 400 500 600 800 1000
     .w-{$i}
         width $i px
     .h-{$i}
@@ -120,66 +112,63 @@ for $i in 10 12 15 20 25 30 40 50 60 70 80 100 120 150 200 250 300 400 500 600 8
         max-width $i px
     .max-h-{$i}
         max-height $i px
-.h-full
-    height 100%
-.w-full
-    width 100%
 
-// percentile width
+// percentile width, multi-based (2 ~ 24)
 for $d in 2 3 4 5 6 12 24
     for $i in (1 .. $d)
         .w-{$i}-{$d}
-            width percentage($i / $d)
+            width percentage($i / $d) !important
 
 // margin, padding
 // top, bottom, left, right
-
 for $i in -20 -15 -12 -10 -8 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 8 9 10 12 15 20 25 30 40 50 60 80 100
     // margin
     .m-t-{$i}
-        margin-top $i px
+        margin-top $i px !important
     .m-b-{$i}
-        margin-bottom $i px
+        margin-bottom $i px !important
     .m-l-{$i}
-        margin-left $i px
+        margin-left $i px !important
     .m-r-{$i}
-        margin-right $i px
+        margin-right $i px !important
     .m-v-{$i}
-        margin-top $i px
-        margin-bottom $i px
+        margin-top $i px !important
+        margin-bottom $i px !important
     .m-h-{$i}
-        margin-left $i px
-        margin-right $i px
+        margin-left $i px !important
+        margin-right $i px !important
     .m-a-{$i}
-        margin $i px
-
+        margin $i px !important
     // padding
     .p-t-{$i}
-        padding-top $i px
+        padding-top $i px !important
     .p-b-{$i}
-        padding-bottom $i px
+        padding-bottom $i px !important
     .p-l-{$i}
-        padding-left $i px
+        padding-left $i px !important
     .p-r-{$i}
-        padding-right $i px
+        padding-right $i px !important
     .p-v-{$i}
-        padding-top $i px
-        padding-bottom $i px
+        padding-top $i px !important
+        padding-bottom $i px !important
     .p-h-{$i}
-        padding-left $i px
-        padding-right $i px
+        padding-left $i px !important
+        padding-right $i px !important
     .p-a-{$i}
-        padding $i px
-
-    // top, bottom, left, right
+        padding $i px !important
+    // top, right, bottom, left
     .top-{$i}
-        top $i px
-    .bottom-{$i}
-        bottom $i px
-    .left-{$i}
-        left $i px
+        top $i px !important
     .right-{$i}
-        right $i px
+        right $i px !important
+    .bottom-{$i}
+        bottom $i px !important
+    .left-{$i}
+        left $i px !important
+// 水平居中 margin: auto
+.m-h-auto
+    margin-left auto
+    margin-right auto
 
 // 边框 Border ------------------------------------------------------------------
 
@@ -220,50 +209,24 @@ for $style in dotted dashed double
     border-left 1px $style $BORDER_COLOR
     border-right 1px $style $BORDER_COLOR
 
-// border width - half pixel
-.b-thin
-    border-width 0.55px
-
-// border width - 2 pixel
-.b-thick
-    border-width 2px
+// border width
+.b-thin // half pixel
+    border-width 0.55px !important
+.b-thick // 2 pixel
+    border-width 2px !important
 
 // border-radius
 for $i in 0 1 2 3 4 5 6 8 10 12 15 20
     .b-r-{$i}
-        border-radius $i px
-
-.b-round
+        border-radius $i px !important
+.b-circle
     border-radius 50%
 
-// 弹性框 Flex ------------------------------------------------------------------
-
-// flex
-.flex
-    display flex
-.flex-column
-    display flex
-    flex-direction column
-.inline-flex
-    display inline-flex
-.inline-flex-column
-    display inline-flex
-    flex-direction column
-for $i in 1 2 3 4 5
-    .flex-{$i}
-        flex-grow $i
-
-// // justify-content TODO simplify to j- or j-c-?
-for $i in left center right space-around space-between stretch start end flex-start flex-end
-    .justify-content-{$i}
-        justify-content $i
-
-// align-items TODO simplify to a- or a-i-?
-for $i in normal stretch center start end flex-start flex-end self-start self-end left right
-    .align-items-{$i}
-        align-items $i
-
 // 字体 Font --------------------------------------------------------------------
+
+for $i in 10 12 15 20 25 30 40 50 60 70 80 90 100
+  .l-h-{$i}
+      line-height $i px
 
 // font style
 .bold
@@ -290,60 +253,39 @@ for $i in pre pre-line pre-wrap
     .{$i}
         white-space $i
 
-// font-size of integer type (1 ~ 6)
-for $i in 1 2 3 4 5 6
-    .f-s-{$i}
-        font-size $i rem
-    .l-h-{$i}
-        line-height $i rem
-    .l-h-{$i}x
-        line-height $i
-
-// font-size of float type (0.5 ~ 1.9)
-for $kv in ('0_5' 0.5) ('0_6' 0.6) ('0_7' 0.7) ('0_8' 0.8) ('0_9' 0.9) ('1_1' 1.1) ('1_2' 1.2) ('1_3' 1.3) ('1_4' 1.4) ('1_5' 1.5) ('1_6' 1.6) ('1_7' 1.7) ('1_8' 1.8) ('1_9' 1.9)
-  .f-s-{$kv[0]}
-    font-size $kv[1]rem
-
-// font-size in pixel (8 ~ 48)
-for $i in 8 10 12 15 20 25 30 40 50 60 80 100
-    .f-s-{$i}
-        font-size $i px
-    .l-h-{$i}
-        line-height $i px
-
-// text-align
+// text-align - same with Bootstrap
 for $i in left center right justify
     .text-{$i}
-        text-align $i
+        text-align $i !important
 
 // v-a-[x]: vertical-align
 for $i in baseline bottom middle sub super text-bottom text-top top
     .v-a-{$i}
-        vertical-align $i
+        vertical-align $i !important
 
 // 颜色 Color -------------------------------------------------------------------
 
 // background-color: maroon, fuchsia, olive, navy, teal, aqua
 for $color in 'aqua' 'black' 'blue' 'cyan' 'lightblue' 'lightgray' 'lime' 'maroon' 'navy' 'gray' 'green' 'olive' 'orange' 'pink' 'purple' 'red' 'silver' 'teal' 'violet' 'yellow' 'white'
     .color-{$color}
-        color convert($color)
+        color convert($color) !important
     .bg-{$color}
-        background-color convert($color)
+        background-color convert($color) !important
     .b-{$color}
-        border-color convert($color)
+        border-color convert($color) !important
 
 // gray colors
-for $i in 1 2 3 4 5 6 7 8 9 a b c d e
+for $i in 1 2 3 4 5 6 7 8 9 a b c d e f
     gray = convert('#' + $i + '0' + $i + '0' + $i + '0')
     .color-gray-{$i}
-        color gray
+        color gray !important
     .bg-gray-{$i}
-        background-color gray
+        background-color gray !important
     .b-gray-{$i}
-        border-color gray
+        border-color gray !important
 
 // opacity
-for $i in 1 2 3 4 5 6 7 8 9
+for $i in 0 1 2 3 4 5 6 7 8 9 10
   .o-{$i}
     opacity ($i * 0.1)
 
@@ -378,7 +320,13 @@ for $i in 1 2 3 4 5 6 7 8 9
 
 // 其他 Others ---------------------------------------------------------------
 
-// 光标
+// cursor
 for $i in default none pointer crosshair text move
   .c-{$i}
     cursor $i
+
+// visibility - same with Bootstrap
+.visible
+  visibility visible
+.invisible
+  visibility hidden

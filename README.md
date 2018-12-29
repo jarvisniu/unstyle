@@ -12,10 +12,14 @@
 - 要连字符：比如 p-l-5 不能 pl5，可读性差，且很容易冲突。
 - 不加字号：自己定义分级的，比如 1 ~ 6，可以参考 `font-size.css` 。不要用 px, rem 的，又多又杂不统一。
 - 不加弹性框：用的少，方案还没想好，而且有专门的解决方案 [flex.css](https://github.com/lzxb/flex.css)。
+- 不引用源码定制：使用CSS变量达到既可以不引用源码，又可以定制样式的目的。目前仅支持配置边框颜色。
+
+## 下个版本
+
+- h, v 改 x, y：水平垂直要不要改为xy，例如 p-v-5 改为 p-y-5。简单易懂，新手友好。
 
 ## 考虑中
 
-- h, v 改 x, y：水平垂直要不要改为xy，例如 p-v-5 改为 p-y-5。简单易懂，新手友好。
 - outline: ol- | o- (可能与 overflow 混淆，但值不混淆，可以共用)，它也算盒模型。
   - overflow: hidden scroll auto overlay? visible
   -	outline: { style }, { color }, { width }, { offset }!
@@ -54,3 +58,12 @@
 - 禁止: 换行 no-wrap (white-space: nowrap), 粗体 no-bold (font-weight: normal), 选择 no-select (user-select: none), 拖拽 no-drap (user-drag: none)
 - 光标: cursor(c-{ style }): default none pointer crosshair text move
 - 显隐: invisible (visibility: hidden), visible (visibility: visible)
+
+## FAQ
+
+### 如何改变边框颜色？
+``` css
+body {
+  --unstyle-border-color: pink;
+}
+```

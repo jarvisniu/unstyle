@@ -1,8 +1,5 @@
 /* unstyle - Write less styles */
 
-// bootstrap4: e6, element-ui: f0
-$BORDER_COLOR = #e6e6e6
-
 // 目录 Contents ----------------------------------------------------------------
 
 // 参考
@@ -52,6 +49,12 @@ $BORDER_COLOR = #e6e6e6
 // v-a-     vertical-align
 // w-       width
 // w-m-     width minus
+
+// 设置 Settings ----------------------------------------------------------------
+
+:root
+  // bootstrap4: e6, element-ui: f0
+  --unstyle-border-color #e6e6e6
 
 // 布局 Layout ------------------------------------------------------------------
 
@@ -174,40 +177,40 @@ for $i in -20 -15 -12 -10 -8 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 8 9 10 12 15 20 25 
 
 // border - solid
 .b-a
-    border solid 1px $BORDER_COLOR
+    border solid 1px var(--unstyle-border-color)
 .b-l
-    border-left solid 1px $BORDER_COLOR
+    border-left solid 1px var(--unstyle-border-color)
 .b-r
-    border-right solid 1px $BORDER_COLOR
+    border-right solid 1px var(--unstyle-border-color)
 .b-t
-    border-top solid 1px $BORDER_COLOR
+    border-top solid 1px var(--unstyle-border-color)
 .b-b
-    border-bottom solid 1px $BORDER_COLOR
+    border-bottom solid 1px var(--unstyle-border-color)
 .b-v
-    border-top solid 1px $BORDER_COLOR
-    border-bottom solid 1px $BORDER_COLOR
+    border-top solid 1px var(--unstyle-border-color)
+    border-bottom solid 1px var(--unstyle-border-color)
 .b-h
-    border-left solid 1px $BORDER_COLOR
-    border-right solid 1px $BORDER_COLOR
+    border-left solid 1px var(--unstyle-border-color)
+    border-right solid 1px var(--unstyle-border-color)
 
 // border - not solid
 for $style in dotted dashed double
   .b-a-{$style}
-    border $style 1px $BORDER_COLOR
+    border $style 1px var(--unstyle-border-color)
   .b-l-{$style}
-    border-left 1px $style $BORDER_COLOR
+    border-left 1px $style var(--unstyle-border-color)
   .b-r-{$style}
-    border-right 1px $style $BORDER_COLOR
+    border-right 1px $style var(--unstyle-border-color)
   .b-t-{$style}
-    border-top 1px $style $BORDER_COLOR
+    border-top 1px $style var(--unstyle-border-color)
   .b-b-{$style}
-    border-bottom 1px $style $BORDER_COLOR
+    border-bottom 1px $style var(--unstyle-border-color)
   .b-v-{$style}
-    border-top 1px $style $BORDER_COLOR
-    border-bottom 1px $style $BORDER_COLOR
+    border-top 1px $style var(--unstyle-border-color)
+    border-bottom 1px $style var(--unstyle-border-color)
   .b-h-{$style}
-    border-left 1px $style $BORDER_COLOR
-    border-right 1px $style $BORDER_COLOR
+    border-left 1px $style var(--unstyle-border-color)
+    border-right 1px $style var(--unstyle-border-color)
 
 // border width
 .b-thin // half pixel

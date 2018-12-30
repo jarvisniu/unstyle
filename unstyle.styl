@@ -100,21 +100,21 @@ for $type in visible scroll hidden auto
 // [min-, max-] width, height, height minus(h-m-): 10 ~ 1000
 for $i in 10 12 15 20 25 30 40 50 60 70 80 90 100 120 150 200 250 300 400 500 600 800 1000
     .w-{$i}
-        width $i px
+        width ($i)px
     .h-{$i}
-        height $i px
+        height ($i)px
     .w-m-{$i}
         width "calc(100% - %spx)" % $i
     .h-m-{$i}
         height "calc(100% - %spx)" % $i
     .min-w-{$i}
-        min-width $i px
+        min-width ($i)px
     .min-h-{$i}
-        min-height $i px
+        min-height ($i)px
     .max-w-{$i}
-        max-width $i px
+        max-width ($i)px
     .max-h-{$i}
-        max-height $i px
+        max-height ($i)px
 
 // percentile width, multi-based (2 ~ 24)
 for $d in 2 3 4 5 6 12 24
@@ -127,47 +127,47 @@ for $d in 2 3 4 5 6 12 24
 for $i in -20 -15 -12 -10 -8 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 8 9 10 12 15 20 25 30 40 50 60 80 100
     // margin
     .m-t-{$i}
-        margin-top $i px !important
+        margin-top ($i)px !important
     .m-b-{$i}
-        margin-bottom $i px !important
+        margin-bottom ($i)px !important
     .m-l-{$i}
-        margin-left $i px !important
+        margin-left ($i)px !important
     .m-r-{$i}
-        margin-right $i px !important
+        margin-right ($i)px !important
     .m-x-{$i}
-        margin-left $i px !important
-        margin-right $i px !important
+        margin-left ($i)px !important
+        margin-right ($i)px !important
     .m-y-{$i}
-        margin-top $i px !important
-        margin-bottom $i px !important
+        margin-top ($i)px !important
+        margin-bottom ($i)px !important
     .m-a-{$i}
-        margin $i px !important
+        margin ($i)px !important
     // padding
     .p-t-{$i}
-        padding-top $i px !important
+        padding-top ($i)px !important
     .p-b-{$i}
-        padding-bottom $i px !important
+        padding-bottom ($i)px !important
     .p-l-{$i}
-        padding-left $i px !important
+        padding-left ($i)px !important
     .p-r-{$i}
-        padding-right $i px !important
+        padding-right ($i)px !important
     .p-x-{$i}
-        padding-left $i px !important
-        padding-right $i px !important
+        padding-left ($i)px !important
+        padding-right ($i)px !important
     .p-y-{$i}
-        padding-top $i px !important
-        padding-bottom $i px !important
+        padding-top ($i)px !important
+        padding-bottom ($i)px !important
     .p-a-{$i}
-        padding $i px !important
+        padding ($i)px !important
     // top, right, bottom, left
     .top-{$i}
-        top $i px !important
+        top ($i)px !important
     .right-{$i}
-        right $i px !important
+        right ($i)px !important
     .bottom-{$i}
-        bottom $i px !important
+        bottom ($i)px !important
     .left-{$i}
-        left $i px !important
+        left ($i)px !important
 // 水平居中 margin: auto
 .m-x-auto
     margin-left auto
@@ -221,7 +221,7 @@ for $style in dotted dashed double
 // border-radius
 for $i in 0 1 2 3 4 5 6 8 10 12 15 20
     .b-r-{$i}
-        border-radius $i px !important
+        border-radius ($i)px !important
 .b-circle
     border-radius 50%
 
@@ -229,7 +229,7 @@ for $i in 0 1 2 3 4 5 6 8 10 12 15 20
 
 for $i in 10 12 15 20 25 30 40 50 60 70 80 90 100
   .l-h-{$i}
-      line-height $i px
+      line-height ($i)px
 
 // font style
 .bold

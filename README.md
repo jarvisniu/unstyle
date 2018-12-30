@@ -4,6 +4,7 @@
 
 ## 同类项目
 
+- [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
 - [Primer Utilities](https://styleguide.github.com/primer/utilities/)
 - [Bootstrap Utilities](https://getbootstrap.com/docs/4.1/utilities/borders/)
 
@@ -16,7 +17,7 @@
 
 ## 下个版本
 
-- h, v 改 x, y：水平垂直要不要改为xy，例如 p-v-5 改为 p-y-5。简单易懂，新手友好。
+- 无
 
 ## 考虑中
 
@@ -36,7 +37,7 @@
 - 溢出: overflow(o-): visible scroll hidden auto
 
 盒模型
-- 边距: margin(m-x-1), padding(p-x-1), x@a(all四周), tblr(上下左右), hv(水平垂直), m-a
+- 边距: margin(m-x-1), padding(p-x-1), x@a(all四周), tblr(上下左右), xy(轴的方向), m-x-a
 - 尺寸: width(w-), height(h-), minus height(h-m-), max-, min-, w-{ m }-{ n }
 - 全尺寸: full-size, full-height, full-width, w-full, h-full
 - 边框
@@ -55,13 +56,15 @@
 
 杂项
 - 颜色: 文字 color-{ color }, 背景 bg-{ color }, 边框 b-{ color }, 灰阶 { x }-gray-[1-e]
-- 禁止: 换行 no-wrap (white-space: nowrap), 粗体 no-bold (font-weight: normal), 选择 no-select (user-select: none), 拖拽 no-drap (user-drag: none)
+- 禁止: 换行 no-wrap (white-space: nowrap), 粗体 no-bold (font-weight: normal), 选择 no-select (user-select: none), 拖拽 no-drag (user-drag: none)
 - 光标: cursor(c-{ style }): default none pointer crosshair text move
 - 显隐: invisible (visibility: hidden), visible (visibility: visible)
 
 ## FAQ
 
 ### 如何改变边框颜色？
+覆盖下面的内部CSS变量即可。
+> 注意：加在 `:root` 或 `html` 上可能会由于导入顺序的原因而导致无法覆盖。
 ``` css
 body {
   --unstyle-border-color: pink;

@@ -18,12 +18,12 @@
 // b-       border-<style|color|width>
 // b-a      border-all
 // b-b      border-bottom
-// b-h      border-horizontal
 // b-l      border-left
 // b-r      border-right
 // b-r-     border-radius
 // b-t      border-top
-// b-v      border-vertical
+// b-x      border-left & right
+// b-y      border-top & bottom
 // bg-      background-color
 // c-       cursor
 // d-       display
@@ -32,20 +32,20 @@
 // h-m-     height minus
 // m-a-     margin-all
 // m-b-     margin-bottom
-// m-h-     margin-horizontal
 // m-l-     marin-left
 // m-r-     margin-right
 // m-t-     margin-top
-// m-v-     margin-vertical
+// m-x-     margin-left & right
+// m-y-     margin-top & bottom
 // o-       overflow, opacity
 // p-       position
 // p-a-     padding-all
 // p-b-     padding-bottom
-// p-h-     padding-horizontal
 // p-l-     padding-left
 // p-r-     padding-right
 // p-t-     padding-top
-// p-v-     padding-vertical
+// p-x-     padding-left & right
+// p-y-     padding-top & bottom
 // v-a-     vertical-align
 // w-       width
 // w-m-     width minus
@@ -134,12 +134,12 @@ for $i in -20 -15 -12 -10 -8 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 8 9 10 12 15 20 25 
         margin-left $i px !important
     .m-r-{$i}
         margin-right $i px !important
-    .m-v-{$i}
-        margin-top $i px !important
-        margin-bottom $i px !important
-    .m-h-{$i}
+    .m-x-{$i}
         margin-left $i px !important
         margin-right $i px !important
+    .m-y-{$i}
+        margin-top $i px !important
+        margin-bottom $i px !important
     .m-a-{$i}
         margin $i px !important
     // padding
@@ -151,12 +151,12 @@ for $i in -20 -15 -12 -10 -8 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 8 9 10 12 15 20 25 
         padding-left $i px !important
     .p-r-{$i}
         padding-right $i px !important
-    .p-v-{$i}
-        padding-top $i px !important
-        padding-bottom $i px !important
-    .p-h-{$i}
+    .p-x-{$i}
         padding-left $i px !important
         padding-right $i px !important
+    .p-y-{$i}
+        padding-top $i px !important
+        padding-bottom $i px !important
     .p-a-{$i}
         padding $i px !important
     // top, right, bottom, left
@@ -169,7 +169,7 @@ for $i in -20 -15 -12 -10 -8 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 8 9 10 12 15 20 25 
     .left-{$i}
         left $i px !important
 // 水平居中 margin: auto
-.m-h-auto
+.m-x-auto
     margin-left auto
     margin-right auto
 
@@ -186,12 +186,12 @@ for $i in -20 -15 -12 -10 -8 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 8 9 10 12 15 20 25 
     border-top solid 1px var(--unstyle-border-color)
 .b-b
     border-bottom solid 1px var(--unstyle-border-color)
-.b-v
-    border-top solid 1px var(--unstyle-border-color)
-    border-bottom solid 1px var(--unstyle-border-color)
-.b-h
+.b-x
     border-left solid 1px var(--unstyle-border-color)
     border-right solid 1px var(--unstyle-border-color)
+.b-y
+    border-top solid 1px var(--unstyle-border-color)
+    border-bottom solid 1px var(--unstyle-border-color)
 
 // border - not solid
 for $style in dotted dashed double
@@ -205,12 +205,12 @@ for $style in dotted dashed double
     border-top 1px $style var(--unstyle-border-color)
   .b-b-{$style}
     border-bottom 1px $style var(--unstyle-border-color)
-  .b-v-{$style}
-    border-top 1px $style var(--unstyle-border-color)
-    border-bottom 1px $style var(--unstyle-border-color)
-  .b-h-{$style}
+  .b-x-{$style}
     border-left 1px $style var(--unstyle-border-color)
     border-right 1px $style var(--unstyle-border-color)
+  .b-y-{$style}
+    border-top 1px $style var(--unstyle-border-color)
+    border-bottom 1px $style var(--unstyle-border-color)
 
 // border width
 .b-thin // half pixel

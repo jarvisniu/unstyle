@@ -1,5 +1,5 @@
 {
-  "name": "unstyle",
+  "name": "@jarvisniu/unstyle",
   "description": "Write less styles",
   "version": "0.1.0",
   "main": "unstyle.css",
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/jarvisniu/unstyle.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["css", "utilities"],
+  "author": "Jarvis Niu",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jarvisniu/unstyle/issues"

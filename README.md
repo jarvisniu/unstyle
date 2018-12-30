@@ -2,6 +2,16 @@
 
 > Write less styles
 
+## 安装
+
+```
+npm install @jarvisniu/unstyle
+```
+或
+```
+yarn add @jarvisniu/unstyle
+```
+
 ## 同类项目
 
 - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
